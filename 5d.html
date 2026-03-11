@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS Box Model Visual Example</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+}
+
+/* Outer container to show margin clearly */
+.wrapper{
+    background-color: lightgray;
+    padding: 20px;
+}
+
+/* Box Model Demonstration */
+.box{
+    width: 300px;
+
+    /* Content background */
+    background-color: yellow;
+
+    /* Padding */
+    padding: 25px;
+
+    /* Border */
+    border: 8px solid orange;
+
+    /* Margin */
+    margin: 40px;
+
+    text-align: center;
+}
+
+</style>
+</head>
+
+<body>
+
+<h2 style="text-align:center;">CSS Box Model Example</h2>
+
+<div class="wrapper">
+    (Gray Area represents surrounding content)
+
+    <div class="box">
+        This is the CONTENT area.<br><br>
+        Padding: 25px (Space inside border)<br>
+        Border: 8px solid orange<br>
+        Margin: 40px (Space outside border)
+    </div>
+
+</div>
+
+</body>
+</html>
