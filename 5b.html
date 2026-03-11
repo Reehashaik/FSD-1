@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Beautiful Flower Garden</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Verdana;
+    text-align:center;
+    color:white;
+    min-height:200vh;
+
+    /* fixed flower background halfway down */
+    background:url("https://picsum.photos/1600/900?nature&blur=2") no-repeat center 50% fixed;
+    background-size:cover;
+    position:relative;
+}
+
+/* tilted overlay */
+body::before{
+    content:"";
+    position:fixed;
+    top:50%;
+    left:0;
+    width:100%;
+    height:50%;
+    background:linear-gradient(rgba(0,100,0,0.6), rgba(255,105,180,0.6));
+    transform:skewY(-8deg);
+    transform-origin:top left;
+    z-index:-1;
+}
+
+header{
+    font-size:40px;
+    padding:25px;
+    letter-spacing:3px;
+    font-weight:bold;
+}
+
+/* grid */
+.container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+    padding:40px;
+}
+
+/* cards */
+.card{
+    background:rgba(255,255,255,0.15);
+    border-radius:20px;
+    padding:20px;
+    transition:0.4s;
+    backdrop-filter:blur(8px);
+}
+
+.card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:15px;
+}
+
+.card:hover{
+    transform:scale(1.08);
+    background:rgba(255,255,255,0.25);
+}
+
+.place{
+    font-size:22px;
+    margin-top:10px;
+    font-weight:bold;
+}
+
+.type{
+    color:#FFD700;
+}
+
+footer{
+    background:rgba(0,0,0,0.6);
+    padding:15px;
+}
+</style>
+</head>
+
+<body>
+
+<header>🌸 Beautiful Flower Garden 🌸</header>
+
+<div class="container">
+
+<div class="card">
+<img src="https://picsum.photos/300/200?flower1">
+<div class="place">Rose</div>
+<div class="type">Symbol of Love</div>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/300/200?flower2">
+<div class="place">Sunflower</div>
+<div class="type">Bright & Cheerful</div>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/300/200?flower3">
+<div class="place">Tulip</div>
+<div class="type">Spring Beauty</div>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/300/200?flower4">
+<div class="place">Lily</div>
+<div class="type">Elegant Flower</div>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/300/200?flower5">
+<div class="place">Orchid</div>
+<div class="type">Exotic Bloom</div>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/300/200?flower6">
+<div class="place">Daisy</div>
+<div class="type">Simple & Fresh</div>
+</div>
+
+</div>
+
+<footer>Enjoy the Beauty of Nature 🌼</footer>
+
+</body>
+</html>
