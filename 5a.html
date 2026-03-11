@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Advanced CSS Color References</title>
+
+    <style>
+        /* CSS Variable (Custom Property) */
+        :root {
+            --mainColor: #ff1493;
+        }
+
+        /* 1. 3-digit Hex */
+        .hex3 {
+            background-color: #0f0;   /* Same as #00ff00 */
+        }
+
+        /* 2. 6-digit Hex */
+        .hex6 {
+            background-color: #1e90ff;
+        }
+
+        /* 3. RGB Percentage */
+        .rgbPercent {
+            background-color: rgb(100%, 0%, 0%);
+        }
+
+        /* 4. Transparent Keyword */
+        .transparentBox {
+            background-color: transparent;
+            border: 3px solid black;
+        }
+
+        /* 5. CSS Variable */
+        .variableColor {
+            background-color: var(--mainColor);
+        }
+
+        div {
+            padding: 15px;
+            margin: 10px;
+            color: white;
+            width: 250px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h2>Different Advanced Ways to Reference Colors</h2>
+
+    <div class="hex3">3-Digit Hex (#0f0)</div>
+    <div class="hex6">6-Digit Hex (#1e90ff)</div>
+    <div class="rgbPercent">RGB Percentage (100%,0%,0%)</div>
+    <div class="transparentBox">Transparent Background</div>
+    <div class="variableColor">CSS Variable Color</div>
+
+</body>
+</html>
