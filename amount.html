@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank Denomination Calculator</title>
+    <script>
+        function calculateDenomination() {
+            // Take input from user
+            var amount = parseInt(prompt("Enter the deposited amount:"));
+
+            var originalAmount = amount; // Save original amount for display
+
+            // Denominations array
+            var notes = [100, 50, 20, 10, 5, 2, 1];
+
+            var output = "Denominations for Rs. " + originalAmount + " :<br>";
+
+            for (var i = 0; i < notes.length; i++) {
+                var count = Math.floor(amount / notes[i]); // Number of notes
+                if (count > 0) {
+                    output += count + " - " + notes[i] + "'s<br>";
+                    amount = amount % notes[i]; // Remaining amount
+                }
+            }
+
+            // Display output in HTML
+            document.getElementById("result").innerHTML = output;
+        }
+    </script>
+</head>
+
+<body onload="calculateDenomination()">
+
+    <h2>Bank Denomination Calculator</h2>
+    <p id="result"></p>
+
+</body>
+</html>
