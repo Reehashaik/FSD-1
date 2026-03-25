@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>User Registration</title>
+
+<script>
+function validateForm()
+{
+    let name = document.getElementById("name").value;
+    let mobile = document.getElementById("mobile").value;
+    let email = document.getElementById("email").value;
+
+    let namePattern = /^[A-Za-z][A-Za-z0-9]{5,}$/;
+    let mobilePattern = /^[0-9]{10}$/;
+    let emailPattern = /^[a-zA-Z0-9._]+@[a-zA-Z]+\.[a-zA-Z]{2,3}$/;
+
+    if(!namePattern.test(name))
+    {
+        alert("Invalid Name");
+        return false;
+    }
+
+    if(!mobilePattern.test(mobile))
+    {
+        alert("Invalid Mobile Number");
+        return false;
+    }
+
+    if(!emailPattern.test(email))
+    {
+        alert("Invalid Email");
+        return false;
+    }
+
+    alert("Registration Successful");
+    return true;
+}
+</script>
+
+</head>
+
+<body>
+
+<h2>User Registration</h2>
+
+<form onsubmit="return validateForm()">
+
+Name:<br>
+<input type="text" id="name"><br>
+<small>e.g. abc123</small>
+<br><br>
+
+Mobile:<br>
+<input type="text" id="mobile"><br>
+<small>10 digit number</small>
+<br><br>
+
+Email:<br>
+<input type="text" id="email"><br>
+<small>example@domain.com</small>
+<br><br>
+
+<input type="submit" value="Register">
+
+</form>
+
+</body>
+</html>	
