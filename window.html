@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Window Object Demo</title>
+    <script>
+        function showWindowInfo() {
+            // Using window.alert()
+            window.alert("Welcome to Window Object Demo!");
+
+            // Using window.confirm()
+            var result = window.confirm("Do you want to continue?");
+            
+            if (result) {
+                // Using window.prompt()
+                var name = window.prompt("Enter your name:");
+
+                // Display screen size using window properties
+                var width = window.innerWidth;
+                var height = window.innerHeight;
+
+                document.getElementById("output").innerHTML =
+                    "Hello " + name + "<br>" +
+                    "Browser Width: " + width + "<br>" +
+                    "Browser Height: " + height;
+
+                // Using window.setTimeout()
+                window.setTimeout(function() {
+                    alert("This message appears after 3 seconds!");
+                }, 3000);
+            } else {
+                alert("You cancelled the operation.");
+            }
+        }
+
+        function openNewWindow() {
+            // Using window.open()
+            window.open("https://www.google.com", "_blank");
+        }
+
+        function closeWindow() {
+            // Using window.close()
+            window.close();
+        }
+    </script>
+</head>
+
+<body>
+
+    <h2>Window Object Example</h2>
+
+    <button onclick="showWindowInfo()">Show Window Info</button>
+    <button onclick="openNewWindow()">Open Google</button>
+    <button onclick="closeWindow()">Close Window</button>
+
+    <p id="output"></p>
+
+</body>
+</html>
