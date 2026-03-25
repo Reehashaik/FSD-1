@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Date Object Example</title>
+</head>
+<body>
+
+<h2>Date Object Demo</h2>
+<p id="output"></p>
+
+<script>
+    // Creating Date object
+    var today = new Date();
+
+    var result = "Current Date and Time: " + today + "<br><br>";
+
+    // Getting date values
+    result += "Date: " + today.getDate() + "<br>";
+    result += "Month: " + (today.getMonth() + 1) + "<br>"; // Months start from 0
+    result += "Year: " + today.getFullYear() + "<br>";
+    result += "Day (0=Sunday): " + today.getDay() + "<br>";
+    result += "Hours: " + today.getHours() + "<br>";
+    result += "Minutes: " + today.getMinutes() + "<br>";
+    result += "Seconds: " + today.getSeconds() + "<br><br>";
+
+    // Setting a new year
+    today.setFullYear(2030);
+    result += "After setFullYear(2030): " + today + "<br>";
+
+    // Display result
+    document.getElementById("output").innerHTML = result;
+</script>
+
+</body>
+</html>
