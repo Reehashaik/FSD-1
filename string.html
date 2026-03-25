@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>String Object Example</title>
+</head>
+<body>
+
+<h2>String Object Demo</h2>
+<p id="output"></p>
+
+<script>
+    // Creating a string
+    var text = "Hello JavaScript World";
+
+    var result = "Original String: " + text + "<br><br>";
+
+    // Using length property
+    result += "Length: " + text.length + "<br>";
+
+    // toUpperCase()
+    result += "Uppercase: " + text.toUpperCase() + "<br>";
+
+    // toLowerCase()
+    result += "Lowercase: " + text.toLowerCase() + "<br>";
+
+    // charAt() 
+    result += "Character at position 6: " + text.charAt(6) + "<br>";
+
+    // indexOf()
+    result += "Index of 'JavaScript': " + text.indexOf("JavaScript") + "<br>";
+
+    // substring()
+    result += "Substring (0 to 5): " + text.substring(0, 5) + "<br>";
+
+    // replace()
+    result += "After replace: " + text.replace("World", "Programming") + "<br>";
+
+    // split()
+    var words = text.split(" ");
+    result += "After split: " + words.join(" | ") + "<br>";
+
+    // Display result
+    document.getElementById("output").innerHTML = result;
+</script>
+
+</body>
+</html>
