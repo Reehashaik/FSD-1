@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RegExp Object Example</title>
+</head>
+<body>
+
+<h2>RegExp Object Demo</h2>
+<p id="output"></p>
+
+<script>
+    // Creating RegExp object
+    var pattern = /java/gi;   // g = global, i = ignore case
+
+    var text = "FSD Is a programming language.";
+
+    var result = "Original Text: " + text + "<br><br>";
+
+    // Using source property
+    result += "Pattern Source: " + pattern.source + "<br>";
+
+    // Using global property
+    result += "Is Global: " + pattern.global + "<br>";
+
+    // Using ignoreCase property
+    result += "Is Ignore Case: " + pattern.ignoreCase + "<br><br>";
+
+    // Using test() method
+    result += "Using test(): " + pattern.test(text) + "<br>";
+
+    // Using exec() method
+    var match;
+    result += "Using exec():<br>";
+    while ((match = pattern.exec(text)) !== null) {
+        result += "Found '" + match[0] + "' at index " + match.index + "<br>";
+    }
+
+    // Display result
+    document.getElementById("output").innerHTML = result;
+</script>
+
+</body>
+</html>
