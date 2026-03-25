@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Object Data Loops</title>
+    <script>
+        function displayObjectData() {
+
+            // User-defined object
+            var student = {
+                name: "dua",
+                age: 20,
+                course: "FSD"
+            };
+
+            var output = "";
+
+            // 1️⃣ Using for-in loop
+            output += "<strong>Using for-in loop:</strong><br>";
+            for (var key in student) {
+                output += key + ": " + student[key] + "<br>";
+            }
+            output += "<br>";
+
+            // 2️⃣ Using forEach (convert object entries to array)
+            output += "<strong>Using forEach loop:</strong><br>";
+            Object.entries(student).forEach(function([key, value]) {
+                output += key + ": " + value + "<br>";
+            });
+            output += "<br>";
+
+            // 3️⃣ Using for-of (on object keys or values)
+            output += "<strong>Using for-of loop:</strong><br>";
+            for (var [key, value] of Object.entries(student)) {
+                output += key + ": " + value + "<br>";
+            }
+
+            // Display output
+            document.getElementById("result").innerHTML = output;
+        }
+    </script>
+</head>
+
+<body onload="displayObjectData()">
+
+    <h2>Display Object Data Using Loops</h2>
+    <p id="result"></p>
+
+</body>
+</html>
