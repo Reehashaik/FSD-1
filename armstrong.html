@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Armstrong Number Checker</title>
+    <script>
+        function checkArmstrong() {
+            // Taking input from the user
+            var num = parseInt(prompt("Enter a number:"));
+            var sum = 0;
+            var temp = num;
+
+            // Calculating sum of cubes of digits
+            while (temp > 0) {
+                var digit = temp % 10;   // Extract last digit
+                sum += digit ** 3;       // Cube of digit
+                temp = Math.floor(temp / 10); // Remove last digit
+            }
+
+            // Checking if sum equals the number
+            if (sum === num) {
+                alert(num + " is an ARMSTRONG NUMBER");
+                document.getElementById("result").innerHTML = num + " is an <strong>ARMSTRONG NUMBER</strong>";
+            } else {
+                alert(num + " is NOT an Armstrong Number");
+                document.getElementById("result").innerHTML = num + " is <strong>NOT an Armstrong Number</strong>";
+            }
+        }
+    </script>
+</head>
+
+<body onload="checkArmstrong()">
+
+    <h2>Armstrong Number Checker</h2>
+    <p id="result"></p>
+
+</body>
+</html>
