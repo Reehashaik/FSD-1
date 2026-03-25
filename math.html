@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Array Object Example</title>
+</head>
+<body>
+
+<h2>Array Object Demo</h2>
+<p id="result"></p>
+
+<script>
+    // Creating an array
+    var numbers = [10, 5, 20, 15];
+
+    var output = "Original Array: " + numbers.join(", ") + "<br>";
+    
+    // Using length property
+    output += "Length: " + numbers.length + "<br><br>";
+
+    // push() - adds element at end
+    numbers.push(25);
+    output += "After push(25): " + numbers.join(", ") + "<br>";
+
+    // pop() - removes last element
+    numbers.pop();
+    output += "After pop(): " + numbers.join(", ") + "<br>";
+
+    // unshift() - adds element at beginning
+    numbers.unshift(1);
+    output += "After unshift(1): " + numbers.join(", ") + "<br>";
+
+    // shift() - removes first element
+    numbers.shift();
+    output += "After shift(): " + numbers.join(", ") + "<br>";
+
+    // sort() - sorts the array
+    numbers.sort(function(a, b) { return a - b; });
+    output += "After sort(): " + numbers.join(", ") + "<br>";
+
+    // reverse() - reverses the array
+    numbers.reverse();
+    output += "After reverse(): " + numbers.join(", ") + "<br>";
+
+    // Display result
+    document.getElementById("result").innerHTML = output;
+</script>
+
+</body>
+</html>
