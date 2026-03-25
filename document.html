@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document Object Demo</title>
+    <script>
+        function changeContent() {
+            // Accessing document property
+            document.title = "Title Changed Successfully";
+
+            // Accessing element using document method
+            var heading = document.getElementById("mainHeading");
+            heading.innerHTML = "Welcome to JavaScript DOM!";
+
+            // Changing background color using document.body property
+            document.body.style.backgroundColor = "lightblue";
+
+            // Creating a new paragraph element
+            var para = document.createElement("p");
+
+            // Adding text to the paragraph
+            para.innerHTML = "This Is HTML Program.";
+
+            // Appending the paragraph to the body
+            document.body.appendChild(para);
+        }
+    </script>
+</head>
+
+<body>
+
+    <h1 id="mainHeading">Original Heading</h1>
+
+    <button onclick="changeContent()">Click Me</button>
+
+</body>
+</html>
