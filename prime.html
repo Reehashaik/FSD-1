@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .result { margin-top: 15px; font-weight: bold; color: #2c3e50; }
+    </style>
+</head>
+<body>
+
+    <h2>Math Operations Tool</h2>
+    <input type="number" id="numInput" placeholder="Enter a number">
+    
+    <br><br>
+    <button onclick="handleAction('factorial')">Factorial</button>
+    <button onclick="handleAction('fibonacci')">Fibonacci</button>
+    <button onclick="handleAction('prime')">Prime Check</button>
+    <button onclick="handleAction('palindrome')">Palindrome Check</button>
+
+    <div id="display" class="result"></div>
+
+    <script>
+        // Driver function for events
+        function handleAction(type) {
+            const num = parseInt(document.getElementById('numInput').value);
+            const display = document.getElementById('display');
+            
+            if (isNaN(num)) {
+                display.innerText = "Please enter a valid number.";
+                return;
+            }
+
+            switch(type) {
+                case 'factorial': display.innerText = "Factorial: " + calcFactorial(num); break;
+                case 'fibonacci': display.innerText = "Fibonacci: " + getFibonacci(num); break;
+                case 'prime': display.innerText = "Primes up to N: " + getPrimes(num); break;
+                case 'palindrome': display.innerText = "Is Palindrome: " + isPalindrome(num); break;
+            }
+        }
+
+        // Logic Functions
+        function calcFactorial(n) {
+            if (n === 0 || n === 1) return 1;
+            let result = 1;
+            for (let i = 2; i <= n; i++) result *= i;
+            return result;
+        }
+
+        function getFibonacci(n) {
+            let sequence = [0, 1];
+            while (sequence[sequence.length - 1] + sequence[sequence.length - 2] <= n) {
+                sequence.push(sequence[sequence.length - 1] + sequence[sequence.length - 2]);
+            }
+            return sequence.join(', ');
+        }
+
+        function getPrimes(n) {
+            let primes = [];
+            for (let i = 2; i <= n; i++) {
+                let isPrime = true;
+                for (let j = 2; j <= Math.sqrt(i); j++) {
+                    if (i % j === 0) isPrime = false;
+                }
+                if (isPrime) primes.push(i);
+            }
+            return primes.join(', ');
+        }
+
+        function isPalindrome(n) {
+            let str = n.toString();
+            let reversed = str.split('').reverse().join('');
+            return str === reversed ? "Yes" : "No";
+        }
+    </script>
+</body>
+</html>
